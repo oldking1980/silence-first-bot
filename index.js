@@ -11,6 +11,7 @@ const client = new Client({
 
 const userMessages = new Map();
 
+/*
 function getToday() {
   return new Date().toISOString().split('T')[0];
 }
@@ -31,9 +32,25 @@ client.on('ready', () => {
 
 client.on('messageCreate', async (message) => {
   if (message.author.bot || message.channel.type === ChannelType.DM) return;
-
+*/
   const userId = message.author.id;
 
+  // Date du jour
+  const today = new Date().toISOString().slice(0,10);
+
+  // On regarde si une date existe déjà
+  const lastDate = lastMessage.get(userId);
+
+  // Si déjà parlé aujourd'hui
+  if (lastDate === today) {
+    console.log("Seulement un message par jour");
+    await message.delete();
+    return;
+  }
+
+  // Sinon on enregistre
+  lastMessage.set(userId, today);
+/*
   if (hasPostedToday(userId)) {
     await message.reply({
       content: '❌ You can only post one message per day. Try again tomorrow!',
@@ -47,5 +64,5 @@ client.on('messageCreate', async (message) => {
   await message.react('✅');
   console.log(`✓ ${message.author.username} posted (${getToday()})`);
 });
-
+*/
 client.login(process.env.DISCORD_TOKEN);
