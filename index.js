@@ -10,7 +10,9 @@ const client = new Client({
 });
 
 const userMessages = new Map();
-console.log ("Test");
+client.on("messageCreate", message => {console.log ("Test");
+});
+
 /*
 function getToday() {
   return new Date().toISOString().split('T')[0];
