@@ -10,7 +10,7 @@ const client = new Client({
 });
 
 const userMessages = new Map();
-console.log ("Test");
+// console.log ("Test");
 /*
 function getToday() {
   return new Date().toISOString().split('T')[0];
