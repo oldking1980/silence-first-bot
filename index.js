@@ -10,8 +10,7 @@ const client = new Client({
 });
 
 const userMessages = new Map();
-client.on("messageCreate", message => {console.log ("Test");
-});
+client.on("messageCreate", {console.log ("Test");});
 
 /*
 function getToday() {
