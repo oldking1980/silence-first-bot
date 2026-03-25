@@ -67,6 +67,6 @@ client.on('messageCreate', async (message) => {
 });
 client.login(process.env.DISCORD_TOKEN);
 */
-console.log("hello j'existe");
+client.on {console.log("hello j'existe");};
 
 
