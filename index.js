@@ -1,4 +1,4 @@
-import { Client, GatewayIntentBits, ChannelType } from 'discord.js';
+/*import { Client, GatewayIntentBits, ChannelType } from 'discord.js';
 
 const client = new Client({
   intents: [
@@ -65,5 +65,8 @@ client.on('messageCreate', async (message) => {
   await message.react('✅');
   console.log(`✓ ${message.author.username} posted (${getToday()})`);
 });
-*/
 client.login(process.env.DISCORD_TOKEN);
+*/
+console.log("hello j'existe");
+
+
